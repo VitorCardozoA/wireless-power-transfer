@@ -6,7 +6,7 @@ Projeto acadêmico de engenharia elétrica voltado ao dimensionamento e à valid
 
 O trabalho combina modelagem analítica, varredura paramétrica e validação por simulação para selecionar um ponto de operação viável para a topologia SS. O repositório foi organizado para funcionar tanto como entrega acadêmica quanto como peça de portfólio técnico.
 
-## Destaques Técnicos
+## Dados Técnicos
 
 - Topologia: compensação série-série (SS)
 - Potência de saída alvo: `500 W`
