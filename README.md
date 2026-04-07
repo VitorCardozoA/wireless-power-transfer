@@ -1,66 +1,30 @@
-# Wireless Power Transfer
+# Transferência de Energia Sem Fio
 
-Projeto acadêmico de engenharia elétrica voltado ao dimensionamento e à validação, em MATLAB/Simulink, de um sistema de transferência de energia sem fio com compensação série-série (SS), operando na faixa de 500 W a 50 kHz.
+Este repositório reúne o material do meu trabalho sobre um sistema de transferência de energia sem fio com compensação série-série (SS), desenvolvido com apoio de MATLAB e Simulink.
 
-## Visão Geral
+O objetivo do estudo foi dimensionar o circuito para operação em `50 kHz`, com potência de saída próxima de `500 W`, e depois validar o comportamento do sistema por meio de cálculo, varredura paramétrica e simulação.
 
-O trabalho combina modelagem analítica, varredura paramétrica e validação por simulação para selecionar um ponto de operação viável para a topologia SS. O repositório foi organizado para funcionar tanto como entrega acadêmica quanto como peça de portfólio técnico.
+## Dados do projeto
 
-## Dados Técnicos
-
-- Topologia: compensação série-série (SS)
-- Potência de saída alvo: `500 W`
+- Topologia analisada: série-série (SS)
 - Frequência nominal: `50 kHz`
+- Potência de saída desejada: `500 W`
+- Tensão de saída: `400 V`
 - Fator de acoplamento adotado: `k = 0.4`
 - Ponto selecionado: `Lp = Ls = 2211 µH`
-- Capacitores calculados: `Cp = Cs ≈ 4.583 nF`
-- Eficiência nominal calculada: `≈ 98.4%`
+- Eficiência obtida: aproximadamente `98,4%`
 
-## Estrutura
+## O que está nesta pasta
 
-```text
-.
-├── article/
-│   └── transferencia-energia-sem-fio-serie-serie.pdf
-├── assets/
-│   └── figures/
-│       ├── selection-maps.png
-│       └── valid-region-zoom.png
-├── docs/
-│   ├── article-validation.md
-│   └── frequency-sweep-validation.csv
-├── figures/
-│   ├── a.png
-│   ├── b.png
-│   ├── c.png
-│   ├── d.png
-│   ├── selecao.png
-│   ├── simc.png
-│   └── topo.pdf
-├── matlab/
-│   ├── parametric_sweep.m
-│   ├── simulink_parameters.m
-│   └── validate_project.m
-├── simulink/
-│   └── ss_topology.slx
-├── paper.tex
-├── references.bib
-└── IEEEtran.cls
-```
+- `article/transferencia-energia-sem-fio-serie-serie.pdf`: versão final do artigo
+- `paper.tex`: fonte LaTeX do artigo
+- `references.bib`: bibliografia utilizada
+- `matlab/`: scripts de cálculo, varredura e validação
+- `simulink/ss_topology.slx`: modelo usado na simulação
+- `figures/` e `assets/figures/`: figuras do trabalho
+- `docs/`: arquivos auxiliares de validação numérica
 
-## Arquivos Principais
-
-- Artigo final: [`article/transferencia-energia-sem-fio-serie-serie.pdf`](article/transferencia-energia-sem-fio-serie-serie.pdf)
-- Fonte LaTeX do artigo: [`paper.tex`](paper.tex)
-- Bibliografia: [`references.bib`](references.bib)
-- Script de varredura paramétrica: [`matlab/parametric_sweep.m`](matlab/parametric_sweep.m)
-- Script de parâmetros do modelo: [`matlab/simulink_parameters.m`](matlab/simulink_parameters.m)
-- Validação automatizada: [`matlab/validate_project.m`](matlab/validate_project.m)
-- Modelo Simulink: [`simulink/ss_topology.slx`](simulink/ss_topology.slx)
-
-## Como Reproduzir
-
-### MATLAB / Simulink
+## Como reproduzir
 
 No MATLAB:
 
@@ -69,17 +33,9 @@ addpath(fullfile(pwd, 'matlab'))
 validate_project
 ```
 
-O fluxo executa:
+Esse script faz a checagem dos arquivos principais, gera as figuras, atualiza o modelo no Simulink e recalcula os resultados usados na análise.
 
-- checagem dos scripts com o Code Analyzer;
-- geração das figuras em `assets/figures/`;
-- atualização e simulação do modelo Simulink;
-- recálculo da tabela de variação de frequência;
-- exportação dos resultados numéricos para `docs/frequency-sweep-validation.csv`.
-
-### LaTeX
-
-Para recompilar o artigo:
+Para recompilar o artigo em LaTeX:
 
 ```powershell
 pdflatex -interaction=nonstopmode paper.tex
@@ -88,17 +44,6 @@ pdflatex -interaction=nonstopmode paper.tex
 pdflatex -interaction=nonstopmode paper.tex
 ```
 
-Depois da compilação, o PDF final consolidado do projeto fica em `article/transferencia-energia-sem-fio-serie-serie.pdf`.
+## Observação
 
-## Validação
-
-Os resultados numéricos revisados da variação de frequência estão documentados em [`docs/frequency-sweep-validation.csv`](docs/frequency-sweep-validation.csv), e a revisão técnica do artigo está em [`docs/article-validation.md`](docs/article-validation.md).
-
-## Portfólio Técnico
-
-Este repositório evidencia:
-
-- modelagem analítica de sistemas ressonantes;
-- automação de validação em MATLAB;
-- integração entre cálculo, simulação e documentação técnica;
-- organização de projeto com foco em reprodutibilidade e apresentação profissional.
+O arquivo principal para leitura do trabalho é o PDF em `article/transferencia-energia-sem-fio-serie-serie.pdf`. Os demais arquivos foram mantidos no repositório para deixar claro como o projeto foi calculado, simulado e documentado.
