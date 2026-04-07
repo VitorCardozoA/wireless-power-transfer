@@ -14,36 +14,22 @@ O objetivo do estudo foi dimensionar o circuito para operação em `50 kHz`, com
 - Ponto selecionado: `Lp = Ls = 2211 µH`
 - Eficiência obtida: aproximadamente `98,4%`
 
-## O que está nesta pasta
+## Organização da pasta
 
 - `article/transferencia-energia-sem-fio-serie-serie.pdf`: versão final do artigo
-- `paper.tex`: fonte LaTeX do artigo
+- `paper.tex`: arquivo-fonte do artigo em LaTeX
 - `references.bib`: bibliografia utilizada
-- `matlab/`: scripts de cálculo, varredura e validação
-- `simulink/ss_topology.slx`: modelo usado na simulação
-- `figures/` e `assets/figures/`: figuras do trabalho
+- `matlab/`: scripts usados nos cálculos e na varredura paramétrica
+- `simulink/ss_topology.slx`: modelo utilizado na simulação
+- `figures/` e `assets/figures/`: figuras e resultados gráficos
 - `docs/`: arquivos auxiliares de validação numérica
 
-## Como reproduzir
+## Leitura do material
 
-No MATLAB:
+Para entender o trabalho de forma direta, o arquivo principal é o PDF em `article/transferencia-energia-sem-fio-serie-serie.pdf`.
 
-```matlab
-addpath(fullfile(pwd, 'matlab'))
-validate_project
-```
+Para verificar os cálculos, basta abrir os arquivos da pasta `matlab/` no MATLAB.
 
-Esse script faz a checagem dos arquivos principais, gera as figuras, atualiza o modelo no Simulink e recalcula os resultados usados na análise.
+Para analisar o modelo de simulação, basta abrir `simulink/ss_topology.slx` no Simulink.
 
-Para recompilar o artigo em LaTeX:
-
-```powershell
-pdflatex -interaction=nonstopmode paper.tex
-bibtex paper
-pdflatex -interaction=nonstopmode paper.tex
-pdflatex -interaction=nonstopmode paper.tex
-```
-
-## Observação
-
-O arquivo principal para leitura do trabalho é o PDF em `article/transferencia-energia-sem-fio-serie-serie.pdf`. Os demais arquivos foram mantidos no repositório para deixar claro como o projeto foi calculado, simulado e documentado.
+Os demais arquivos foram mantidos no repositório para mostrar de forma completa como o projeto foi calculado, simulado e documentado.
