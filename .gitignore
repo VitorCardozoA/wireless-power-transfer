@@ -1,0 +1,41 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# MATLAB / Simulink
+*.asv
+*.autosave
+*.m~
+*.mlx~
+*.slxc
+*.mex*
+*.opreport
+*.p
+*.rtw
+*.tmp
+slprj/
+sccprj/
+simulink_cache/
+SimulinkCache/
+
+# Dados e logs gerados
+*.log
+*.mat
+
+# LaTeX temporário
+*.aux
+*.bbl
+*.bcf
+*.blg
+paper.pdf
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
